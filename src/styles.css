@@ -89,6 +89,10 @@ a:hover {
   background: #562768;
 }
 
+.btn-primary:disabled {
+  background: #562768;
+}
+
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
   background-color: #5D286F;
   border: none;

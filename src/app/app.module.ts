@@ -7,12 +7,14 @@ import {RouterModule} from '@angular/router';
 import {ROUTES} from './app.routes';
 import {InputComponent} from './shared/input/input.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    InputComponent
+    InputComponent,
+    CadastroUsuarioComponent
   ],
   imports: [
     BrowserModule,

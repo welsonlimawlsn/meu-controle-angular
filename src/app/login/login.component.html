@@ -8,10 +8,10 @@
                 [isInvalid]="isInvalid('usuario')"></mc-input>
       <mc-input id="senha" label="senha" type="password" formControlName="senha"
                 [isInvalid]="isInvalid('senha')"></mc-input>
-      <button type="button" class="btn btn-primary">entrar</button>
+      <button type="button" class="btn btn-primary" [disabled]="loginForm.invalid">entrar</button>
       <div class="text-white">
         <span class="float-left"><a href="recuperacao_senha.html" class="text-white">esqueci a senha</a></span>
-        <span class="float-right">não tem conta? <a href="cadastro.html">crie agora</a></span>
+        <span class="float-right">não tem conta? <a [routerLink]="['/cadastro']">crie agora</a></span>
       </div>
     </form>
   </div>
