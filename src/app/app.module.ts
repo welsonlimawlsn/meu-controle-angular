@@ -5,14 +5,18 @@ import {AppComponent} from './app.component';
 import {LoginComponent} from './login/login.component';
 import {RouterModule} from '@angular/router';
 import {ROUTES} from './app.routes';
+import {InputComponent} from './shared/input/input.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    InputComponent
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [],

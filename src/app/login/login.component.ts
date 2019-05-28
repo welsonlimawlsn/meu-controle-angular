@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'mc-login',
@@ -6,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  loginForm: FormGroup;
 
-  ngOnInit() {
+  constructor(private fb: FormBuilder) {
   }
 
+  ngOnInit() {
+    this.loginForm = this.fb.group({
+      usuario: this.fb.control('', [Validators.required]),
+      senha: this.fb.control('', [Validators.required])
+    });
+  }
+
+  isInvalid(fieldName: string) {
+    const field = this.loginForm.get(fieldName);
+    return field.invalid && (field.dirty || field.touched);
+  }
 }
