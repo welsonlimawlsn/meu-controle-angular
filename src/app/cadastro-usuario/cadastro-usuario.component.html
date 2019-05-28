@@ -3,8 +3,6 @@
     <h1 class="text-center logo">
       <span class="azul">meu</span><span class="roxo">controle</span><span class="azul">_cadastro</span>
     </h1>
-    <p>{{cadastroForm.valid}}</p>
-    <p>{{cadastroForm.value | json}}/p>
     <form [formGroup]="cadastroForm" autocomplete="off">
       <mc-input label="nome" type="text" id="nome" [isInvalid]="isInvalid('nome')" formControlName="nome"></mc-input>
 
