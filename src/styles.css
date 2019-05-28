@@ -1,1 +1,174 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  font-family: Quicksand, sans-serif;
+  color: #404040;
+}
+
+::selection {
+  background: #FFFFFF;
+  color: #5D286F;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(45deg, #2EB389, #2E89B3, #5D286F) no-repeat fixed;
+}
+
+label {
+  display: none;
+}
+
+a {
+  color: #5D286F;
+}
+
+a:hover {
+  color: #562768;
+  text-decoration: none;
+}
+
+.form-control {
+  background: rgba(255, 255, 255, 0.30);
+  height: calc(2em + 1rem + 4px);
+  border: none;
+  transition: all .5s ease-in-out;
+}
+
+.form-control::placeholder {
+  color: rgba(0,0,0,0.30);
+}
+
+.form-control:focus {
+  background: rgba(255, 255, 255, 0.40);
+  box-shadow: none;
+}
+
+.was-validated .form-control:invalid, .form-control.is-invalid {
+  background-image: none;
+  border-bottom: 5px solid crimson;
+}
+
+.was-validated .form-control:invalid:focus, .form-control.is-invalid:focus {
+  box-shadow: none;
+  border-bottom: 5px solid crimson;
+}
+
+.logo {
+  font-size: 2.5em;
+  background: #FFFFFF;
+  margin-top: 1em;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+}
+
+.logo > .azul {
+  color: #2E89B3;
+}
+
+.logo > .roxo {
+  color: #5D286F;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 0.75rem;
+  border: none;
+}
+
+.btn-primary {
+  background: #5D286F;
+}
+
+.btn-primary:hover {
+  background: #562768;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
+  background-color: #5D286F;
+  border: none;
+}
+
+.btn-primary:focus, .btn-primary.focus {
+  box-shadow: none;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: none;
+}
+
+.texto-destaque-simples {
+  color: #FFFFFF;
+  font-weight: lighter;
+}
+
+.texto-destaque-simples > i {
+  color: #FFFFFF;
+}
+
+.margin-top-bottom {
+  margin: 1em 0;
+}
+
+.saldo-header {
+  font-size: 2em;
+}
+
+.data-header {
+  font-size: 1.5em;
+}
+
+.jumbotron {
+  background: rgba(255, 255, 255, 0.30);
+}
+
+.proximos-pagamento > ul > li {
+  font-size: 1.3em;
+}
+
+.categoria {
+  margin-right: 2em;
+}
+
+.btn-link-primary {
+  color: #2E89B3;
+}
+
+.btn-link-secondary {
+  color: #4f4f4f;
+}
+
+.btn-link-primary:hover, .btn-link-secondary:hover {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.accordion {
+  margin-bottom: 2em;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.30);
+  border: none;
+}
+
+.card-header {
+  background: rgba(255, 255, 255, 0.30);
+}
+
+.popover {
+  background: rgba(255, 255, 255, 0.30);
+  border: none;
+}
+
+.popover-body {
+  color: white;
+}
+
+.bs-popover-right > .arrow::after, .bs-popover-auto[x-placement^="right"] > .arrow::after {
+  border-right-color: rgba(255, 255, 255, 0.30);
+}
+
+.bs-popover-right > .arrow::before, .bs-popover-auto[x-placement^="right"] > .arrow::before {
+  border: none;
+}
