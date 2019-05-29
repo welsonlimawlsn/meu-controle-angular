@@ -4,19 +4,24 @@
       <span class="azul">meu</span><span class="roxo">controle</span><span class="azul">_cadastro</span>
     </h1>
     <form [formGroup]="cadastroForm" autocomplete="off">
-      <mc-input label="nome" type="text" id="nome" [isInvalid]="isInvalid('nome')" formControlName="nome"></mc-input>
+      <mc-input label="nome" type="text" id="nome" errorMessage="você precisa informar o seu nome"
+                [isInvalid]="isInvalid('nome')" formControlName="nome"></mc-input>
 
-      <mc-input label="sobrenome" type="text" id="sobrenome" [isInvalid]="isInvalid('sobrenome')" formControlName="sobrenome"></mc-input>
+      <mc-input label="sobrenome" type="text" id="sobrenome" errorMessage="você precisa informar o seu sobrenome"
+                [isInvalid]="isInvalid('sobrenome')" formControlName="sobrenome"></mc-input>
 
-      <mc-input label="e-mail" type="email" id="email" [isInvalid]="isInvalid('email')" formControlName="email"></mc-input>
+      <mc-input label="e-mail" type="email" id="email" errorMessage="você precisa informa um e-mail valido"
+                [isInvalid]="isInvalid('email')" formControlName="email"></mc-input>
 
-      <mc-input label="usuário" type="text" id="usuario" [isInvalid]="isInvalid('usuario')" formControlName="usuario"></mc-input>
+      <mc-input label="usuário" type="text" id="usuario" errorMessage="você deve criar um nome de usuário"
+                [isInvalid]="isInvalid('usuario')" formControlName="usuario"></mc-input>
 
-      <mc-input label="senha" type="password" id="senha" [isInvalid]="isInvalid('senha')" formControlName="senha"></mc-input>
+      <mc-input label="senha" type="password" id="senha" errorMessage="você deve criar uma senha"
+                [isInvalid]="isInvalid('senha')" formControlName="senha"></mc-input>
 
       <button type="button" class="btn btn-primary" [disabled]="cadastroForm.invalid">criar conta</button>
-      <div class="text-white">
-        <span>já possui uma conta? <a [routerLink]="['/login']">entre agora</a></span>
+      <div>
+        <span class="text-white">já possui uma conta? <a [routerLink]="['/login']">entre agora</a></span>
       </div>
     </form>
   </div>

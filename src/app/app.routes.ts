@@ -5,5 +5,5 @@ import {CadastroUsuarioComponent} from './cadastro-usuario/cadastro-usuario.comp
 export const ROUTES: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'cadastro', component: CadastroUsuarioComponent},
-  {path: '', redirectTo: 'login', pathMatch: 'full'}
+  {path: '', redirectTo: 'cadastro', pathMatch: 'full'}
 ];

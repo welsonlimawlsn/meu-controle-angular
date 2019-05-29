@@ -5,9 +5,9 @@
     </h1>
     <form [formGroup]="loginForm" autocomplete="off">
       <mc-input id="usuario" label="usuário" type="text" formControlName="usuario"
-                [isInvalid]="isInvalid('usuario')"></mc-input>
+                errorMessage="você precisa informar o seu usuário" [isInvalid]="isInvalid('usuario')"></mc-input>
       <mc-input id="senha" label="senha" type="password" formControlName="senha"
-                [isInvalid]="isInvalid('senha')"></mc-input>
+                errorMessage="você precisa informar a sua senha" [isInvalid]="isInvalid('senha')"></mc-input>
       <button type="button" class="btn btn-primary" [disabled]="loginForm.invalid">entrar</button>
       <div class="text-white">
         <span class="float-left"><a href="recuperacao_senha.html" class="text-white">esqueci a senha</a></span>

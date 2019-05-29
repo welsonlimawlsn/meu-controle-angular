@@ -181,3 +181,8 @@ a:hover {
 .bs-popover-right > .arrow::before, .bs-popover-auto[x-placement^="right"] > .arrow::before {
   border: none;
 }
+
+.invalid-feedback {
+  color: #FFFFFF;
+  text-align: right;
+}
