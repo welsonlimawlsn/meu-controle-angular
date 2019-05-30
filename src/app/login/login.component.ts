@@ -1,26 +1,26 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormComponent} from '../shared/form.component';
 
 @Component({
   selector: 'mc-login',
   templateUrl: './login.component.html'
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, FormComponent {
 
-  loginForm: FormGroup;
+  form: FormGroup;
 
   constructor(private fb: FormBuilder) {
   }
 
   ngOnInit() {
-    this.loginForm = this.fb.group({
+    this.form = this.fb.group({
       usuario: this.fb.control('', [Validators.required]),
       senha: this.fb.control('', [Validators.required])
     });
   }
 
-  isInvalid(fieldName: string) {
-    const field = this.loginForm.get(fieldName);
-    return field.invalid && (field.dirty || field.touched);
+  getControl(field: string): AbstractControl {
+    return this.form.get(field);
   }
 }

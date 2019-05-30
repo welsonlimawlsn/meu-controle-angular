@@ -3,12 +3,12 @@
     <h1 class="text-center logo">
       <span class="azul">meu</span><span class="roxo">controle</span><span class="azul">_login</span>
     </h1>
-    <form [formGroup]="loginForm" autocomplete="off">
+    <form [formGroup]="form" autocomplete="off">
       <mc-input id="usuario" label="usuário" type="text" formControlName="usuario"
-                errorMessage="você precisa informar o seu usuário" [isInvalid]="isInvalid('usuario')"></mc-input>
+                errorMessage="você precisa informar o seu usuário" [control]="getControl('usuario')"></mc-input>
       <mc-input id="senha" label="senha" type="password" formControlName="senha"
-                errorMessage="você precisa informar a sua senha" [isInvalid]="isInvalid('senha')"></mc-input>
-      <button type="button" class="btn btn-primary" [disabled]="loginForm.invalid">entrar</button>
+                errorMessage="você precisa informar a sua senha" [control]="getControl('senha')"></mc-input>
+      <button type="button" class="btn btn-primary" [disabled]="form.invalid">entrar</button>
       <div class="text-white">
         <span class="float-left"><a href="recuperacao_senha.html" class="text-white">esqueci a senha</a></span>
         <span class="float-right">não tem conta? <a [routerLink]="['/cadastro']">crie agora</a></span>

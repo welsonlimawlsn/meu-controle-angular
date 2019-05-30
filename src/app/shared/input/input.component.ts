@@ -1,5 +1,5 @@
 import {Component, forwardRef, Input, OnInit} from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {AbstractControl, ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
 @Component({
   selector: 'mc-input',
@@ -21,7 +21,7 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   @Input()
   errorMessage: string;
   @Input()
-  isInvalid: boolean;
+  control: AbstractControl;
   onChange: any;
   value: string;
   onTouched: any;
@@ -51,5 +51,9 @@ export class InputComponent implements OnInit, ControlValueAccessor {
 
   setOnTouched() {
     this.onTouched();
+  }
+
+  isInvalid() {
+    return this.control.invalid && (this.control.dirty || this.control.touched);
   }
 }

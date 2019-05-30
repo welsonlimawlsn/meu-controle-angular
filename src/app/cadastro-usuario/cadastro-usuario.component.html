@@ -3,23 +3,23 @@
     <h1 class="text-center logo">
       <span class="azul">meu</span><span class="roxo">controle</span><span class="azul">_cadastro</span>
     </h1>
-    <form [formGroup]="cadastroForm" autocomplete="off">
+    <form [formGroup]="form" autocomplete="off">
       <mc-input label="nome" type="text" id="nome" errorMessage="você precisa informar o seu nome"
-                [isInvalid]="isInvalid('nome')" formControlName="nome"></mc-input>
+                [control]="getControl('nome')" formControlName="nome"></mc-input>
 
       <mc-input label="sobrenome" type="text" id="sobrenome" errorMessage="você precisa informar o seu sobrenome"
-                [isInvalid]="isInvalid('sobrenome')" formControlName="sobrenome"></mc-input>
+                [control]="getControl('sobrenome')" formControlName="sobrenome"></mc-input>
 
       <mc-input label="e-mail" type="email" id="email" errorMessage="você precisa informa um e-mail valido"
-                [isInvalid]="isInvalid('email')" formControlName="email"></mc-input>
+                [control]="getControl('email')" formControlName="email"></mc-input>
 
       <mc-input label="usuário" type="text" id="usuario" errorMessage="você deve criar um nome de usuário"
-                [isInvalid]="isInvalid('usuario')" formControlName="usuario"></mc-input>
+                [control]="getControl('usuario')" formControlName="usuario"></mc-input>
 
       <mc-input label="senha" type="password" id="senha" errorMessage="você deve criar uma senha"
-                [isInvalid]="isInvalid('senha')" formControlName="senha"></mc-input>
+                [control]="getControl('senha')" formControlName="senha"></mc-input>
 
-      <button type="button" class="btn btn-primary" [disabled]="cadastroForm.invalid">criar conta</button>
+      <button type="button" class="btn btn-primary" [disabled]="form.invalid">criar conta</button>
       <div>
         <span class="text-white">já possui uma conta? <a [routerLink]="['/login']">entre agora</a></span>
       </div>

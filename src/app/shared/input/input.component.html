@@ -1,6 +1,6 @@
 <div class="form-group">
   <label [for]="id">{{label}}</label>
-  <input [type]="type" class="form-control" [class.is-invalid]="isInvalid" [id]="id" [placeholder]="label"
+  <input [type]="type" class="form-control" [class.is-invalid]="isInvalid()" [id]="id" [placeholder]="label"
          (change)="setValue($event)" (keyup)="setValue($event)" (blur)="setOnTouched()">
   <div class="invalid-feedback">
     {{errorMessage}}

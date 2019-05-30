@@ -1,13 +1,14 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormComponent} from '../shared/form.component';
 
 @Component({
   selector: 'mc-cadastro-usuario',
   templateUrl: './cadastro-usuario.component.html'
 })
-export class CadastroUsuarioComponent implements OnInit {
+export class CadastroUsuarioComponent implements OnInit, FormComponent {
 
-  cadastroForm: FormGroup;
+  form: FormGroup;
 
   emailPattern = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
@@ -15,7 +16,7 @@ export class CadastroUsuarioComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.cadastroForm = this.fb.group({
+    this.form = this.fb.group({
       nome: this.fb.control('', [Validators.required]),
       sobrenome: this.fb.control('', [Validators.required]),
       usuario: this.fb.control('', [Validators.required]),
@@ -24,8 +25,7 @@ export class CadastroUsuarioComponent implements OnInit {
     });
   }
 
-  isInvalid(fieldName: string) {
-    const field = this.cadastroForm.get(fieldName);
-    return field.invalid && (field.dirty || field.touched);
+  getControl(fieldName: string): AbstractControl {
+    return this.form.get(fieldName);
   }
 }
