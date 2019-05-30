@@ -1,7 +1,9 @@
 import {AbstractControl, FormGroup} from '@angular/forms';
 
-export interface FormComponent {
+export class FormComponent {
   form: FormGroup;
 
-  getControl(field: string): AbstractControl;
+  getControl(field: string): AbstractControl {
+    return this.form.get(field);
+  }
 }
